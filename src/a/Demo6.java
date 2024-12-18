@@ -5,12 +5,16 @@ public class Demo6 {
         printStarPattern(1);
     }
 
-    static int printStarPattern(int star) {
+    static int cols = 5;
+
+    static void printStarPattern(int star) {
         System.out.print("* ");
-        if (star % 5 == 0) {
+        if (star % cols == 0) {
+            cols--;
+            star = 0;
             System.out.println();
-            return --star;
         }
+        if (cols == 0) return;
         printStarPattern(++star);
     }
 }
